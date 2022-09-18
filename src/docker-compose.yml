@@ -2,11 +2,12 @@ version: "3"
 
 services:
   ghost:
-    image: ghost:5.2.3
+    image: ghost:latest
     container_name: ghost
     volumes:
       - ./..:/var/lib/ghost/content/themes/liebling:Z
       - ./ghost.db:/var/lib/ghost/content/data/ghost.db:Z
+      - ./../images:/var/lib/ghost/content/images
     environment:
       - NODE_ENV=development
     ports:

@@ -2,6 +2,8 @@
 *.zip
 *.db
 
+images/
+
 assets/mix-manifest.json
 
 npm-debug.log

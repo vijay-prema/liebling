@@ -5,6 +5,7 @@
   font-size: 1.750rem;
   font-weight: 700;
   margin: 0 0 15px;
+  text-shadow: 0px 0px 0.5rem #000000;
 
   @include respond-to('medium') {
     letter-spacing: 0.5px;

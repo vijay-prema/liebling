@@ -98,7 +98,7 @@ into the {body} of the default.hbs template --}}
             <div class="l-wrapper in-post">
               <div class="m-subscribe-section__content">
                 <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
+                  <h4 class="m-subscribe-section__title">{{t "Subscribe to my newsletter"}}</h4>
                   <p class="m-subscribe-section__description">
                     {{t "Get the latest posts delivered right to your inbox."}}
                   </p>
@@ -113,7 +113,11 @@ into the {body} of the default.hbs template --}}
         <section class="m-author">
           <div class="m-author__content">
             <div class="m-author__picture">
-              <a href="{{primary_author.url}}" class="m-author-picture" aria-label="{{primary_author.name}}">
+                {{#if primary_author.website}}
+                  <a href="{{primary_author.website}}" class="m-author-picture" aria-label="{{primary_author.name}}">
+                {{else}}
+                  <a href="{{primary_author.url}}" class="m-author-picture" aria-label="{{primary_author.name}}">
+                {{/if}}
                 {{#if primary_author.profile_image}}
                   <div style="background-image: url({{primary_author.profile_image}});"></div>
                 {{else}}
@@ -123,7 +127,11 @@ into the {body} of the default.hbs template --}}
             </div>
             <div class="m-author__info">
               <h4 class="m-author__name">
-                <a href="{{primary_author.url}}">{{primary_author.name}}</a>
+                {{#if primary_author.website}}
+                  <a href="{{primary_author.website}}">{{primary_author.name}}</a>
+                {{else}}
+                  <a href="{{primary_author.url}}">{{primary_author.name}}</a>
+                {{/if}}
               </h4>
               {{#has author="count:>1"}}
                 <p class="m-small-text in-author-along-with">
@@ -134,7 +142,7 @@ into the {body} of the default.hbs template --}}
                 <p class="m-author__bio">{{primary_author.bio}}</p>
               {{/if}}
               <ul class="m-author-links">
-                {{#if primary_author.website}}
+                {{#if false}}
                   <li>
                     <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="{{t "Website"}}">
                       <span class="icon-globe" aria-hidden="true"></span>
@@ -186,7 +194,7 @@ into the {body} of the default.hbs template --}}
           {{#if related}}
             <section class="m-recommended">
               <div class="l-wrapper in-recommended">
-                <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
+                <h3 class="m-section-title in-recommended">{{t "Check out more..."}}</h3>
                 <div class="m-recommended-articles">
                   <div class="m-recommended-slider swiper js-recommended-slider">
                     <div class="swiper-wrapper">
